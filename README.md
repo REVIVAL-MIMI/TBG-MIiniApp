@@ -1,2 +1,2 @@
 # TBG-MIiniApp
-Хуй
+Nothing
