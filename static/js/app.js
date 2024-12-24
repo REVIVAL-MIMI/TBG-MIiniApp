@@ -1,12 +1,12 @@
-const initData = window.Telegram.WebApp.initDataUnsafe;
-const userId = initData.user?.id;
-const userName = initData.user?.first_name || "Неизвестный пользователь"; // Имя пользователя по умолчанию
-
-// Функция для определения темы
-function detectTheme() {
-    const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    return darkModeQuery.matches ? 'dark' : 'light';
-}
+// const initData = window.Telegram.WebApp.initDataUnsafe;
+// const userId = initData.user?.id;
+// const userName = initData.user?.first_name || "Неизвестный пользователь"; // Имя пользователя по умолчанию
+//
+// // Функция для определения темы
+// function detectTheme() {
+//     const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+//     return darkModeQuery.matches ? 'dark' : 'light';
+// }
 
 // Устанавливаем тему в body
 const currentTheme = detectTheme();
@@ -77,3 +77,6 @@ document.getElementById('expense-form').addEventListener('submit', function(even
         alert('Ошибка подключения');
     });
 });
+
+
+
