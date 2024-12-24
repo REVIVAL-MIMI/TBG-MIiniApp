@@ -1,3 +1,9 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 /* Стили для светлой темы */
 body.light-theme {
     background-color: white;
@@ -21,17 +27,21 @@ body.dark-theme {
     display: none;
 }
 
-/* Плавное появление формы */
-#main-form {
+.main-form {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    background-color: #f0f0f0;
     display: none;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
 }
 
-/* Когда форма будет отображаться */
-#main-form.visible {
+.main-form.active {
     display: block;
     opacity: 1;
+}
+.main-form.fade-out {
+    opacity: 0;
 }
 
 /* Стили для формы */
@@ -63,3 +73,383 @@ button:hover {
     background-color: #45a049;
 }
 
+.preloader-wrap {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+}
+.preloader {
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    width: 24px;
+    height: 24px;
+}
+.preloader span {
+    display: inline-block;
+    background-color: #ffffff;
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-animation: ball-fussion-ball1 1s 0s ease infinite;
+    -moz-animation: ball-fussion-ball1 1s 0s ease infinite;
+    -o-animation: ball-fussion-ball1 1s 0s ease infinite;
+    animation: ball-fussion-ball1 1s 0s ease infinite;
+}
+.preloader span:nth-child(1) {
+    top: 0;
+    left: 50%;
+    z-index: 1;
+}
+.preloader span:nth-child(2) {
+    top: 50%;
+    left: 100%;
+    z-index: 2;
+    -webkit-animation-name: ball-fussion-ball2;
+    -moz-animation-name: ball-fussion-ball2;
+    -o-animation-name: ball-fussion-ball2;
+    animation-name: ball-fussion-ball2;
+}
+.preloader span:nth-child(3) {
+    top: 100%;
+    left: 50%;
+    z-index: 1;
+    -webkit-animation-name: ball-fussion-ball3;
+    -moz-animation-name: ball-fussion-ball3;
+    -o-animation-name: ball-fussion-ball3;
+    animation-name: ball-fussion-ball3;
+}
+.preloader span:nth-child(4) {
+    top: 50%;
+    left: 0;
+    z-index: 2;
+    -webkit-animation-name: ball-fussion-ball4;
+    -moz-animation-name: ball-fussion-ball4;
+    -o-animation-name: ball-fussion-ball4;
+    animation-name: ball-fussion-ball4;
+}
+@-webkit-keyframes ball-fussion-ball1 {
+    0% {
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+    50% {
+        top: -100%;
+        left: 200%;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+    100% {
+        top: 50%;
+        left: 100%;
+        z-index: 2;
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+}
+@-moz-keyframes ball-fussion-ball1 {
+    0% {
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+    50% {
+        top: -100%;
+        left: 200%;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+    100% {
+        top: 50%;
+        left: 100%;
+        z-index: 2;
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+}
+@-o-keyframes ball-fussion-ball1 {
+    0% {
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+    50% {
+        top: -100%;
+        left: 200%;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+    100% {
+        top: 50%;
+        left: 100%;
+        z-index: 2;
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+}
+@keyframes ball-fussion-ball1 {
+    0% {
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+    50% {
+        top: -100%;
+        left: 200%;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+    100% {
+        top: 50%;
+        left: 100%;
+        z-index: 2;
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+}
+@-webkit-keyframes ball-fussion-ball2 {
+    0% {
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+    50% {
+        top: 200%;
+        left: 200%;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+    100% {
+        top: 100%;
+        left: 50%;
+        z-index: 1;
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+}
+@-moz-keyframes ball-fussion-ball2 {
+    0% {
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+    50% {
+        top: 200%;
+        left: 200%;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+    100% {
+        top: 100%;
+        left: 50%;
+        z-index: 1;
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+}
+@-o-keyframes ball-fussion-ball2 {
+    0% {
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+    50% {
+        top: 200%;
+        left: 200%;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+    100% {
+        top: 100%;
+        left: 50%;
+        z-index: 1;
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+}
+@keyframes ball-fussion-ball2 {
+    0% {
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+    50% {
+        top: 200%;
+        left: 200%;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+    100% {
+        top: 100%;
+        left: 50%;
+        z-index: 1;
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+}
+@-webkit-keyframes ball-fussion-ball3 {
+    0% {
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+    50% {
+        top: 200%;
+        left: -100%;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+    100% {
+        top: 50%;
+        left: 0;
+        z-index: 2;
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+}
+@-moz-keyframes ball-fussion-ball3 {
+    0% {
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+    50% {
+        top: 200%;
+        left: -100%;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+    100% {
+        top: 50%;
+        left: 0;
+        z-index: 2;
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+}
+@-o-keyframes ball-fussion-ball3 {
+    0% {
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+    50% {
+        top: 200%;
+        left: -100%;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+    100% {
+        top: 50%;
+        left: 0;
+        z-index: 2;
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+}
+@keyframes ball-fussion-ball3 {
+    0% {
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+    50% {
+        top: 200%;
+        left: -100%;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+    100% {
+        top: 50%;
+        left: 0;
+        z-index: 2;
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+}
+@-webkit-keyframes ball-fussion-ball4 {
+    0% {
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+    50% {
+        top: -100%;
+        left: -100%;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+    100% {
+        top: 0;
+        left: 50%;
+        z-index: 1;
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+}
+@-moz-keyframes ball-fussion-ball4 {
+    0% {
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+    50% {
+        top: -100%;
+        left: -100%;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+    100% {
+        top: 0;
+        left: 50%;
+        z-index: 1;
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+}
+@-o-keyframes ball-fussion-ball4 {
+    0% {
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+    50% {
+        top: -100%;
+        left: -100%;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+    100% {
+        top: 0;
+        left: 50%;
+        z-index: 1;
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+}
+@keyframes ball-fussion-ball4 {
+    0% {
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+    50% {
+        top: -100%;
+        left: -100%;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+    100% {
+        top: 0;
+        left: 50%;
+        z-index: 1;
+        opacity: .35;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    }
+}
