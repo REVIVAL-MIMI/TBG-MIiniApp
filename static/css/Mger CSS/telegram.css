@@ -1,0 +1,102 @@
+/* Стили для светлой темы */
+body.light-theme {
+    background-color: white;
+    color: black;
+}
+
+/* Стили для тёмной темы */
+body.dark-theme {
+    background-color: black;
+    color: white;
+}
+
+/* Контейнер для приветствия */
+#greeting-container {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Скрытая форма, которую мы покажем после приветствия */
+.hidden {
+    /* display: none; */
+}
+
+/* Плавное появление формы */
+#main-form {
+    /* display: none; */
+    /* opacity: 0;
+    transition: opacity 1s ease-in-out; */
+    text-align: center;
+}
+
+/* Когда форма будет отображаться */
+#main-form.visible {
+    display: block;
+    opacity: 1;
+}
+
+/* Стили для формы */
+form {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input {
+    padding: 10px;
+    margin: -20px 0;
+    border: 1px solid black;
+    border-radius: 40px;
+    background-color: black;
+    color: white;
+}
+
+select {
+    padding: 10px;
+    margin: -20px 0;
+    border: 1px solid black;
+    border-radius: 40px;
+    background-color: black;
+    color: white;
+}
+
+#date {
+    display: flex;
+    width: 35%;
+    align-items: center;
+    margin-bottom: 1%;
+}
+
+#amount{
+    width: 80%;
+    margin-bottom: 1%;
+}
+
+#expense_item {
+    width: 80%;
+    margin-bottom: 1%;
+}
+
+#spender {
+    width: 80%;
+    margin-bottom: 10%;
+}
+
+button {
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 30%;
+}
+
+button:hover {
+    background-color: black;
+}
+
