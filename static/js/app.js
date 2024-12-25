@@ -2,6 +2,50 @@ const initData = window.Telegram.WebApp.initDataUnsafe;
 const userId = initData.user?.id;
 const userName = initData.user?.first_name || "Неизвестный пользователь";
 
+document.addEventListener("DOMContentLoaded", function() {
+    const greetingContainer = document.getElementById('greeting-container');
+    const mainForm = document.getElementById('main-form');
+    const body = document.body;
+    const snowbank = document.createElement('div');
+    snowbank.classList.add('snowbank');
+    body.appendChild(snowbank);
+    let snowflakesInterval;
+
+    function createSnowflake() {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        body.appendChild(snowflake);
+
+        snowflake.style.left = Math.random() * window.innerWidth + 'px';
+
+        setTimeout(() => {
+            snowflake.remove();
+        }, 2500);
+    }
+
+    function startSnowfall() {
+        snowflakesInterval = setInterval(createSnowflake, 100);
+    }
+
+    function stopSnowfall() {
+        clearInterval(snowflakesInterval);
+    }
+
+    setTimeout(() => {
+        greetingContainer.style.opacity = '0';
+        setTimeout(() => {
+            greetingContainer.style.display = 'none';
+            mainForm.classList.add('visible');
+            stopSnowfall();
+        }, 2500);
+    }, 3000);
+
+    startSnowfall();
+
+    setTimeout(() => {
+        stopSnowfall();
+    }, 2500);
+});
 
 function detectTheme() {
     const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -64,7 +108,6 @@ document.getElementById('expense-form').addEventListener('submit', function(even
     .then(result => {
         if (result.success) {
             alert('Данные успешно сохранены!');
-            // Очистить форму или показать сообщение
             event.target.reset();
         } else {
             alert('Ошибка при сохранении данных');
