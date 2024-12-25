@@ -1,2 +1,0 @@
-# TBG-MIiniApp
-Nothing

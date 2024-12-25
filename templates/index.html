@@ -8,38 +8,42 @@
     <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
-    <div id="greeting-container">
-        <h1 id="greeting">Загрузка...</h1>
-    </div>
+<div id="greeting-container">
+    <h1 id="greeting">Загрузка...</h1>
+</div>
 
-    <!-- Главная форма -->
-    <div id="main-form" class="hidden">
-        <h2>Главная форма</h2>
-        <p>Заполните данные о расходах.</p>
+<!-- Главная форма -->
+<div id="main-form" class="hidden">
+    <h2>Главная форма</h2>
+    <p>Заполните данные о расходах.</p>
 
-        <form id="expense-form">
+    <form id="expense-form">
 
-            <!-- Поле для суммы -->
-            <label for="amount">Сумма:</label>
-            <input type="number" id="amount" name="amount" placeholder="Введите сумму" required>
+        <!-- Поле для суммы -->
+        <label for="amount">Сумма:</label>
+        <input type="number" id="amount" name="amount" placeholder="Введите сумму" required>
 
-            <!-- Поле для выбора даты -->
-            <label for="date">Дата:</label>
-            <input type="date" id="date" name="date" value="{{ today_date }}">
+        <!-- Поле для выбора даты -->
+        <label for="date">Дата:</label>
+        <input type="date" id="date" name="date" value="{{ today_date }}">
 
-            <!-- Поле для "На что потрачено" -->
-            <label for="expense_item">Статья расходов:</label>
-            <input type="text" id="expense_item" name="expense_item" placeholder="Введите описание" required>
+        <label for="expense_item">Статья расходов:</label>
+        <select id="expense_item" name="expense_item" required>
+            <option value="" disabled selected>Выберите статью</option>
+        </select>
 
-            <!-- Поле для "Кто потратил" -->
-            <label for="spender">Кто потратил:</label>
-            <input type="text" id="spender" name="spender" placeholder="Сотрудник/Контрагент" required>
+        <label for="spender">Кто потратил:</label>
+        <select id="spender" name="spender" required>
+            <option value="" disabled selected>Выберите сотрудника</option>
+        </select>
 
-            <!-- Кнопка отправить -->
-            <button type="submit">Отправить</button>
-        </form>
-    </div>
 
-    <script src="../static/js/app.js"></script>
+
+        <!-- Кнопка отправить -->
+        <button type="submit">Отправить</button>
+    </form>
+</div>
+
+<script src="../static/js/app.js"></script>
 </body>
 </html>
